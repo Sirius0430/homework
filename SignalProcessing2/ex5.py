@@ -24,7 +24,8 @@ if __name__ == '__main__':
     width, height, bands, data, geotrans, proj = readTif("D:\Codes\作业\SignalProcessing2\data.tif")
     img = cv2.merge([data[2], data[1], data[0]])
     ex1 = subSample(img)
-    ex2 = lowPassFilter(ex1)
+    ex2 = lowPassFilter(img)
+    ex2 = subSample(ex2)
 
     ex4 = interpolate(ex2,2)
     ex5 = subSample(ex1)
